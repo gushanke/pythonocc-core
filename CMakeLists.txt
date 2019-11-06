@@ -47,10 +47,7 @@ endif(APPLE)
 # Option_With_Default macro #
 #############################
 macro( option_with_default OPTION_NAME OPTION_STRING OPTION_DEFAULT )
-if( NOT DEFINED ${OPTION_NAME} )
-  set( ${OPTION_NAME} ${OPTION_DEFAULT} )
-endif( NOT DEFINED ${OPTION_NAME} )
-  OPTION( ${OPTION_NAME} "${OPTION_STRING}" ${${OPTION_NAME}} )
+  set( ${OPTION_NAME}  ${OPTION_DEFAULT} CACHE ${OPTION_STRING} )
 endmacro( option_with_default OPTION_NAME OPTION_STRING OPTION_DEFAULT )
 
 ##########
@@ -258,7 +255,7 @@ file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/${SWIG_FILES_PATH})
 foreach(OCE_MODULE ${OCE_TOOLKIT_MODEL})
   set(FILE ${SWIG_FILES_PATH}/${OCE_MODULE}.i)
   set_source_files_properties(${FILE} PROPERTIES CPLUSPLUS ON)
-  
+
   swig_add_library (${OCE_MODULE} LANGUAGE python SOURCES ${FILE} TYPE MODULE)
   swig_link_libraries(${OCE_MODULE} ${OCE_MODEL_LIBRARIES})
   if (APPLE)
