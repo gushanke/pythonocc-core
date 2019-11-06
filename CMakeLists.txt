@@ -47,7 +47,7 @@ endif(APPLE)
 # Option_With_Default macro #
 #############################
 macro( option_with_default OPTION_NAME OPTION_STRING OPTION_DEFAULT )
-  set( ${OPTION_NAME}  ${OPTION_DEFAULT} CACHE ${OPTION_STRING} )
+  set( ${OPTION_NAME}  ${OPTION_DEFAULT} CACHE BOOL ${OPTION_STRING} )
 endmacro( option_with_default OPTION_NAME OPTION_STRING OPTION_DEFAULT )
 
 ##########
