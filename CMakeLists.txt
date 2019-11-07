@@ -53,8 +53,11 @@ endmacro( option_with_default OPTION_NAME OPTION_STRING OPTION_DEFAULT )
 ##########
 # Python #
 ##########
-find_package(Python3 COMPONENTS Development)
-include_directories(${Python3_INCLUDE_DIRS})
+#find_package(Python3 COMPONENTS Development)
+#include_directories(${Python3_INCLUDE_DIRS})
+find_package(PythonInterp)
+find_package(PythonLibs)
+include_directories(${PYTHON_INCLUDE_PATH})
 
 ########
 # SWIG #
