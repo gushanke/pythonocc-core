@@ -56,6 +56,17 @@ endmacro( option_with_default OPTION_NAME OPTION_STRING OPTION_DEFAULT )
 find_package(Python3 COMPONENTS Development)
 include_directories(${Python3_INCLUDE_DIRS})
 
+########
+# SWIG #
+########
+# set cmake policy 0078 and 0086 before calling the package
+cmake_policy(SET CMP0078 OLD)
+cmake_policy(SET CMP0086 OLD)
+find_package(SWIG 4)
+include(${SWIG_USE_FILE})
+set(SWIG_FILES_PATH src/SWIG_files/wrapper)
+
+
 ##############################################################
 # 32/64 bit detection
 ###############################################################
@@ -84,13 +95,6 @@ if(APPLE)
   add_definitions(-stdlib=libc++)
 endif(APPLE)
 
-########
-# SWIG #
-########
-find_package(SWIG 3.0.9)
-include(${SWIG_USE_FILE})
-set(SWIG_FILES_PATH src/SWIG_files/wrapper)
-
 ############
 # FreeType #
 ############
@@ -111,7 +115,7 @@ if(DEFINED OCE_INCLUDE_PATH)
 # if OCE_INCLUDE_PATH is not passed at command line,
 # find OCE automatically
 else(OCE_INCLUDE_PATH)
-  find_package(OCE 0.18 REQUIRED)
+  find_package(OCE 0.18)
   # OCE 0.18 relies on OCC 6.9.1
   set(CMAKE_SWIG_FLAGS ${CMAKE_SWIG_FLAGS} -DOCC_VERSION_HEX=0x060901)
   if(OCE_FOUND)
