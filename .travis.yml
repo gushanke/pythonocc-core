@@ -45,7 +45,6 @@ jobs:
       osx_image: xcode9.4
 # Windows
     - env: PYTHON="3.5" CONDA_PY=35 ARCH="x86_64"
-      env: CMAKE_GENERATOR="Visual Studio 15 2017"
       os: windows
     - env: PYTHON="3.6" CONDA_PY=36 ARCH="x86_64"
       os: windows
