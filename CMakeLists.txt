@@ -26,6 +26,10 @@ set(PYTHONOCC_VERSION_DEVEL -dev)
 
 cmake_minimum_required(VERSION 3.12)
 
+# Force C++ 11
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 if( NOT DEFINED PYTHONOCC_BUILD_TYPE )
   set( PYTHONOCC_BUILD_TYPE "Release" CACHE STRING "Build type" ) # By default set release build
 endif( NOT DEFINED PYTHONOCC_BUILD_TYPE )
