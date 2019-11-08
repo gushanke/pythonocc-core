@@ -35,6 +35,8 @@ requirements:
     - freetype >=2.7
     - smesh ==6.7.6
     - six
+    - libgcc-ng >=7.3.0 [linux]
+    - libstdcxx-ng >=7.3.0 [linux]
 
 test:
   requires:
