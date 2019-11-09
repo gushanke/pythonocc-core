@@ -37,6 +37,7 @@ requirements:
     - six
     - libgcc-ng >=7.3.0 [linux]
     - libstdcxx-ng >=7.3.0 [linux]
+    - libcxx >=4.0.1 [osx]
 
 test:
   requires:
