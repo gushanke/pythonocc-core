@@ -45,7 +45,7 @@ cache :
   apt: true
   directories:
     - $HOME/download
-    #- $HOME/miniconda
+    - $HOME/miniconda
 
 jobs:
   include:
@@ -108,13 +108,13 @@ install:
     choco install miniconda3;
     fi;
     fi
-  - export PATH="$MINICONDA_PATH:$MINICONDA_SUB_PATH:$PATH";
+  - export PATH="$MINICONDA_PATH:$MINICONDA_SUB_PATH:$PATH"
   # begin checking miniconda existance
   - echo "checking if folder $MINICONDA_SUB_PATH exists"
   - if [ -d $MINICONDA_SUB_PATH ]; then
-      echo "folder $MINICONDA_SUB_PATH exists"
+      echo "folder $MINICONDA_SUB_PATH exists";
     else
-      echo "folder $MINICONDA_SUB_PATH does not exist"
+      echo "folder $MINICONDA_SUB_PATH does not exist";
     fi
   - hash -r
   - conda config --set always_yes yes --set changeps1 no --set ssl_verify false
