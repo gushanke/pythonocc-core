@@ -3,9 +3,6 @@ dist: bionic
 
 language: cpp
 
-cache:
- apt: true
-
 git:
   depth: false
 
@@ -48,7 +45,7 @@ cache :
   apt: true
   directories:
     - $HOME/download
-    - $HOME/miniconda
+    #- $HOME/miniconda
 
 jobs:
   include:
